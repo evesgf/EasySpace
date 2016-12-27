@@ -1,0 +1,12 @@
+/Document
+/EasySpaceClient/*.csproj
+/EasySpaceClient/*.sln
+/EasySpaceClient/Library
+/EasySpaceClient/.vs
+/EasySpaceServer/EasySpaceServer/bin
+/EasySpaceServer/EasySpaceServer/obj
+/EasySpaceClient/Assets/LarkFramework
+/EasySpaceClient/Assets/CommonPack
+/EasySpaceClient/Assets/CommonPack.meta
+/EasySpaceClient/output
+/EasySpaceClient/Temp
