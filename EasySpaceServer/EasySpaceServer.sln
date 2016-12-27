@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySpaceServer", "EasySpaceServer\EasySpaceServer.csproj", "{A42B2E80-EB39-4344-A929-742B4FEF9E7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendBox", "SendBox\SendBox.csproj", "{3368C2C3-285D-4124-B7FF-2BB9B4521D75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A42B2E80-EB39-4344-A929-742B4FEF9E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42B2E80-EB39-4344-A929-742B4FEF9E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42B2E80-EB39-4344-A929-742B4FEF9E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3368C2C3-285D-4124-B7FF-2BB9B4521D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3368C2C3-285D-4124-B7FF-2BB9B4521D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3368C2C3-285D-4124-B7FF-2BB9B4521D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3368C2C3-285D-4124-B7FF-2BB9B4521D75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -144,7 +144,7 @@ namespace EasySpaceServer
                 HandleMsg(conn, str);
 
                 str = conn.GetAdress() + "：" + str;
-                byte[] bytes = System.Text.Encoding.Default.GetBytes(str);
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(str);
                 //广播
                 for (int i = 0; i < conns.Length; i++)
                 {
@@ -166,41 +166,51 @@ namespace EasySpaceServer
 
         private void HandleMsg(Conn conn, string str)
         {
-            //获取数据
-            if (str == "_GET")
+            ////获取数据
+            //if (str == "_GET")
+            //{
+            //    string cmdStr = "SELECT * FROM msg ORDER BY id DESC LIMIT 10";
+            //    MySqlCommand cmd = new MySqlCommand(cmdStr, sqlConn);
+            //    try
+            //    {
+            //        MySqlDataReader dataReader = cmd.ExecuteReader();
+            //        str = "";
+            //        while (dataReader.Read())
+            //        {
+            //            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(str);
+            //            conn.socket.Send(bytes);
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine("[数据库]查询失败 " + e.Message);
+            //        throw;
+            //    }
+            //}
+            //else
+            //{
+            //    //插入数据
+            //    string cmdStrFormat = "insert into msg set name='{0}',msg='{1}';";
+            //    string cmdStr = string.Format(cmdStrFormat, conn.GetAdress(), str);
+            //    MySqlCommand cmd = new MySqlCommand(cmdStr, sqlConn);
+            //    try
+            //    {
+            //        cmd.ExecuteNonQuery();
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine("[数据库]插入失败 " + e.Message);
+            //    }
+            //}
+
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(str);
+            //广播消息
+            for (int i = 0; i < conns.Length; i++)
             {
-                string cmdStr = "SELECT * FROM msg ORDER BY id DESC LIMIT 10";
-                MySqlCommand cmd = new MySqlCommand(cmdStr, sqlConn);
-                try
-                {
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-                    str = "";
-                    while (dataReader.Read())
-                    {
-                        byte[] bytes = System.Text.Encoding.Default.GetBytes(str);
-                        conn.socket.Send(bytes);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("[数据库]查询失败 " + e.Message);
-                    throw;
-                }
-            }
-            else
-            {
-                //插入数据
-                string cmdStrFormat = "insert into msg set name='{0}',msg='{1}';";
-                string cmdStr = string.Format(cmdStrFormat, conn.GetAdress(), str);
-                MySqlCommand cmd = new MySqlCommand(cmdStr, sqlConn);
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("[数据库]插入失败 " + e.Message);
-                }
+                if (conns[i] == null) continue;
+                if (!conns[i].isUse) continue;
+                Console.WriteLine("将消息转播给 " + conns[i].GetAdress());
+                conns[i].socket.Send(bytes);
             }
         }
     }

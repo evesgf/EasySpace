@@ -89,7 +89,7 @@ public class Net : MonoBehaviour {
     public void Send()
     {
         string str = textInput.text;
-        byte[] bytes = System.Text.Encoding.Default.GetBytes(str);
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(str);
         try
         {
             socket.Send(bytes);
