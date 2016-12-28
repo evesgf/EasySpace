@@ -1,0 +1,6 @@
+E:\Project\EasySpace\EasySpaceServer\SendBox\bin\Debug\SendBox.exe.config
+E:\Project\EasySpace\EasySpaceServer\SendBox\bin\Debug\SendBox.exe
+E:\Project\EasySpace\EasySpaceServer\SendBox\bin\Debug\SendBox.pdb
+E:\Project\EasySpace\EasySpaceServer\SendBox\obj\Debug\SendBox.csprojResolveAssemblyReference.cache
+E:\Project\EasySpace\EasySpaceServer\SendBox\obj\Debug\SendBox.exe
+E:\Project\EasySpace\EasySpaceServer\SendBox\obj\Debug\SendBox.pdb
