@@ -14,7 +14,10 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var angle = RotateSpeed * Time.deltaTime * 360f;
-        transform.RotateAround(target.position, target.up, angle);
+        if (RotateSpeed != 0)
+        {
+            var angle = RotateSpeed * Time.deltaTime * 360f;
+            transform.RotateAround(target.position, target.up, angle);
+        }
 	}
 }
